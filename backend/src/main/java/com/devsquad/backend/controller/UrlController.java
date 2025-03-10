@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devsquad.backend.models.User;
 import com.devsquad.backend.services.userservice;
 
+
 @RestController
 public class UrlController {
 
@@ -37,6 +38,12 @@ public class UrlController {
     public List<User> listallusers(){
         return userservice.viewallUsers();
     }
+
+    // @GetMapping("passcode")
+    // public List<User> getbypasscode(){
+    //     return userservice.retriveUsers();
+    // }
+    
 
     @GetMapping("/home")
     public String getMethodName() {

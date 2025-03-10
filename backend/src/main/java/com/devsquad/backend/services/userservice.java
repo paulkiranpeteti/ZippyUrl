@@ -21,5 +21,10 @@ public class userservice {
     public List<User> viewallUsers(){
         return userRepository.findAll();
     }
+
+
+    // public List<User> retriveUsers(){
+    //     return userRepository.getUsers("root");
+    // }
     
 }
