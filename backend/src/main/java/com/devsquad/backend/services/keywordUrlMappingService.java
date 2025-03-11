@@ -21,5 +21,9 @@ public class keywordUrlMappingService {
     public List<KeywordUrlMapping> listAllUrls(){
         return keywordUrlMappingRepository.findAll();
     }
+
+    public String getSourceUrl(String keyword){
+        return keywordUrlMappingRepository.getSourceUrl(keyword);
+    }
     
 }
