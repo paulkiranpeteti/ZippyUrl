@@ -1,0 +1,46 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7vh; /* Navbar occupies 10% of the viewport height */
+    background-color:darkkhaki;
+    padding: 1rem 2rem; /* Added horizontal padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 1000;
+}
+
+.app-title {
+    font-size: 30px; /* Explicit pixel size */
+    font-weight: bold;
+}
+
+.auth-buttons {
+    display: flex;
+    font-size: 16px;
+    gap: 1rem;
+    margin-right: 60px; /* Adds right margin for better spacing */
+}
+
+.login-button,
+.signup-button {
+    padding: 8px 16px; /* Pixel-based padding */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* .login-button{
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+} */
+
+.login-button, .signup-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
