@@ -2,63 +2,109 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 20px;
 }
 
 .user-nav {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color:lightblue;
+  padding: 20px; /* Increase padding to make the navbar taller */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  padding-right: 50px;
 }
 
 .user-nav button {
-  padding: 0.5rem 1rem;
+  margin-left: 20px; /* Increase margin to add more spacing between buttons */
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
   border: none;
-  background-color: #3b82f6;
-  color: white;
-  border-radius: 0.375rem;
+  border-radius: 40px;
   cursor: pointer;
+  font-size: 18px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+}
+
+.user-nav button:hover {
+  background-color: #0056b3;
 }
 
 .user-section {
+  margin-top: 80px; /* Adjust this value to avoid overlap with the fixed navbar */
   width: 100%;
-  max-width: 600px;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 0.375rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  text-align: center;
 }
 
-.sample-photo {
+.banner-image {
   width: 100%;
   height: auto;
+  margin-top: 20px;
 }
 
 .url-input {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem;
-  margin-bottom: 0.5rem;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .create-url-button {
-  padding: 0.5rem 1rem;
-  background-color: #3b82f6;
+  padding: 10px 20px;
+  background-color: #28a745;
   color: white;
   border: none;
-  border-radius: 0.375rem;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 18px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+}
+
+.create-url-button:hover {
+  background-color: #218838;
+}
+
+.short-url-display {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.short-url-display a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.short-url-display a:hover {
+  text-decoration: underline;
 }
 
 .url-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .url-table th, .url-table td {
-  border: 1px solid #d1d5db;
-  padding: 0.5rem;
-  text-align: left;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.url-table th {
+  background-color: #f2f2f2;
+  text-align: center;
 }
