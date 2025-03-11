@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import com.devsquad.backend.services.keywordUrlMappingService;
 import com.devsquad.backend.services.userservice;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:5741"}) // Best Practice is to define Global CORS Configuration
 public class UrlController {
 
     @Autowired
@@ -36,10 +38,10 @@ public class UrlController {
         {
             // HttpSession session = request.getSession();
             // session.setAttribute(username, opt.get().getUsername());
-            return "Login Successful";
+            return "LoginSuccessful";
         }
         else
-            return "Invalid Credentials";
+            return "InvalidCredentials";
     }
 
     @PostMapping("/register")
