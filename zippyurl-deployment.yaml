@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blogspace
+  name: zippyurl-deployment
   labels:
-    app: blogs
-  namespace: paulkiran
+    app: zippyurl
+  namespace: devsquad
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: blogs
+      app: zippyurl
   template:
     metadata:
       labels:
-        app: blogs
+        app: zippyurl
     spec:
       containers:
-      - name: blogspace
-        image: petetipaulkiran/blogreact:latest
+      - name: zippyurl
+        image: lekhanag240304/zippy_url:latest
         ports:
-        - containerPort: 5173
+        - containerPort: 3000
