@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blogspace
+  labels:
+    app: blogs
+  namespace: paulkiran
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blogs
+  template:
+    metadata:
+      labels:
+        app: blogs
+    spec:
+      containers:
+      - name: blogspace
+        image: petetipaulkiran/blogreact:latest
+        ports:
+        - containerPort: 5173
