@@ -1,0 +1,48 @@
+services:
+  backend:
+    build: ./backend/
+    ports:
+      - 5275:5276
+    networks:
+      - zippy-network
+    image: zippyurl-backend
+    container_name: practical_aryabhata
+    depends_on:
+      database:
+        condition: service_healthy
+
+  database:
+    image: mysql:latest
+    ports:
+      - 3308:3306
+    container_name: passionate_kalam
+    networks:
+      - zippy-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent" ]
+      interval: 3s
+      retries: 5
+      start_period: 30s
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=urlshortener
+    volumes:
+      - zippy-volume:/var/lib/mysql
+
+  frontend:
+    build: ./url-shortener-frontend/
+    image: zippy-frontend
+    ports:
+      - 3000:3000
+    networks:
+      - zippy-network
+    container_name: visionary_raman
+    depends_on:
+      backend:
+        condition: service_started
+
+volumes:
+  zippy-volume: {}
+
+networks:
+  zippy-network: {}
